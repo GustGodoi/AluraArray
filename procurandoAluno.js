@@ -7,8 +7,13 @@ const listaDeAlunosEMedias = [alunos, medias];
 
 function exibeNomeENota(aluno) {
     if (listaDeAlunosEMedias[0].includes(aluno)) {
-        const index     = listaDeAlunosEMedias[0].indexOf(aluno);
-        const notaAluno = listaDeAlunosEMedias[1][index];
+        // const alunos    = listaDeAlunosEMedias[0];
+        // const medias    = listaDeAlunosEMedias[1];
+        // Forma de desestruturação de listas
+        const [alunos, medias] = listaDeAlunosEMedias;
+
+        const index     = alunos.indexOf(aluno);
+        const notaAluno = medias[index];
         return `${aluno} está cadastrada(o). Sua média é: ${notaAluno}.`;
     } else {
         return "Aluno não encontrado!";
